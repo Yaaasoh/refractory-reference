@@ -1,0 +1,96 @@
+# 企業名検証パターン
+# 用途: 用語集から特定企業への言及を検出
+
+## 耐火物メーカー（国内）
+品川リフラクトリーズ
+Shinagawa Refractories
+黒崎播磨
+Kurosaki Harima
+AGCセラミックス
+ヨータイ
+日本キャスタブル工業
+TYK
+東京窯業
+日本特殊炉材
+イソライト工業
+
+## 耐火物メーカー（海外）
+Vesuvius
+RHI Magnesita
+Refratechnik
+Calderys
+Saint-Gobain
+
+## コンクリートポンプ・圧送機メーカー
+
+### ピストンポンプ
+Schwing
+シュウィング
+Schwing America
+Putzmeister
+プツマイスター
+Putzmeister TK 7
+極東開発工業
+Kyokuto Kaihatsu
+ピストンクリート
+
+### スクイーズポンプ
+スクイーズクリート
+ChemGrout
+IMER Group
+川機械工業
+
+## ミキサー・混練機
+
+### ミキサータイプ（企業名・製品名由来）
+Nauta
+ナウタ
+Henschel
+ヘンシェル
+Omni
+オムニ
+
+### 混練機メーカー
+アイリッヒ
+Eirich
+光洋機械産業
+愛工舎製作所
+関東混合機工業
+北川鉄工所
+ダルトン
+日工
+
+## 製鉄会社
+
+### 国内
+日本製鉄
+JFEスチール
+神戸製鋼
+新日鉄住金
+住友金属
+川崎製鉄
+NKK
+
+### 海外
+ArcelorMittal
+POSCO
+Baosteel
+ThyssenKrupp
+
+## ポンプメーカー・製品名
+兵神装備
+Moyno
+
+## ソフトウェア・解析
+ANSYS
+Fluent
+OpenFOAM
+COMSOL
+Particleworks
+FLOW-3D
+Prometech
+
+## 物流・運輸
+山九
+鴻池運輸
+日本通運
