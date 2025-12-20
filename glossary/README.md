@@ -122,27 +122,6 @@
 
 ---
 
-## 品質保証
-
-本用語集は、以下のプロセスで品質を確保しています:
-
-1. **機密情報除去**: 企業名、個人名、内部識別子を完全除去
-2. **不適切コンテンツ除去**: 仕様値、製品名、操業データを除去
-3. **検証スクリプト**: `../validation/validate_glossary.sh` による自動検証
-4. **詳細記録**: `../DELETION_REPORT.md` に除去内容を詳細記録
-
----
-
-## 除外ファイル（非公開）
-
-以下のファイルは公開版に含まれていません:
-
-- `01-transcription-ocr.md` - 個人名含む
-- `03-equipment-tools-extracted.md` - 内部文書パス含む
-- `07-organizations-people.md` - 個人名リスト
-
----
-
 ## 参照規格
 
 本用語集は以下の規格を参照しています:
@@ -150,19 +129,4 @@
 - **ASTM C401-12(2018)**: Standard Classification of Alumina and Alumina-Silicate Castable Refractories
 - **JIS R 2521**: 耐火物用語
 
-詳細: `../validation/REFERENCES.md` 参照
-
----
-
-## 更新履歴
-
-### 2025-12-20: Phase 1完了
-- 機密情報除去（13項目削除）
-- ASTM C401出典追加（02-materials.md）
-- コンベア仕様セクション削除（03-equipment.md）
-- 温度参考値削除（04-construction.md、05-steel-industry.md）
-- CFDソフトウェアセクション削除（06-rheology-simulation.md）
-
----
-
-**最終更新**: 2025-12-20
+詳細については各用語ファイルの出典セクションを参照してください。
