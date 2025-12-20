@@ -9,15 +9,16 @@ repo_url: https://github.com/Yaaasoh/refractory-reference
 theme:
   name: material
   language: ja
+  direction: ltr
   palette:
     primary: indigo
     accent: indigo
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.top
     - search.suggest
     - search.highlight
+    - toc.integrate
 
 nav:
   - Home: index.md
