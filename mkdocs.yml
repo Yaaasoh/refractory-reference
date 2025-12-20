@@ -21,17 +21,11 @@ theme:
 
 nav:
   - Home: index.md
-  - 用語集:
-    - 概要: glossary/index.md
-    - 材料・物性: glossary/02-materials.md
-    - 設備・機器: glossary/03-equipment.md
-    - 施工・打設: glossary/04-construction.md
-    - 製鉄プロセス: glossary/05-steel-industry.md
-    - レオロジー・シミュレーション: glossary/06-rheology-simulation.md
-  - 検証システム:
-    - 概要: validation/index.md
-    - ワークフロー: validation/VALIDATION_WORKFLOW.md
-    - 参照規格: validation/REFERENCES.md
+  - 材料・物性: glossary/02-materials.md
+  - 設備・機器: glossary/03-equipment.md
+  - 施工・打設: glossary/04-construction.md
+  - 製鉄プロセス: glossary/05-steel-industry.md
+  - レオロジー・シミュレーション: glossary/06-rheology-simulation.md
 
 markdown_extensions:
   - tables

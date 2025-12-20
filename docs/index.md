@@ -23,9 +23,3 @@
 | レオロジー・シミュレーション | [06-rheology-simulation.md](glossary/06-rheology-simulation.md) | 14 |
 
 **合計**: 58セクション（約360用語エントリ）
-
-## 品質検証システム
-
-本用語集は自動検証システムにより品質を維持しています。
-
-詳細は[検証システム概要](validation/index.md)を参照してください。
