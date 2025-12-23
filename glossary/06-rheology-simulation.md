@@ -15,7 +15,7 @@
 | せん断速度（ずり速度） | Shear rate | γ̇ | s⁻¹ |
 | 粘度 | Viscosity | η | Pa·s |
 | 降伏応力（降伏値） | Yield stress | τ₀, τ_y | Pa |
-| 塑性粘度 | Plastic viscosity | η_p | Pa·s |
+| 塑性粘度（ビンガム粘度） | Plastic viscosity (Bingham viscosity) | η_p | Pa·s |
 
 ### 1.2 流体分類
 
