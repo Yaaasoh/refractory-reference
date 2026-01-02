@@ -22,7 +22,7 @@ if [ "$TOOL_NAME" = "Write" ] || [ "$TOOL_NAME" = "Edit" ]; then
                 echo "  1. Open the file in an editor that supports encoding selection" >&2
                 echo "  2. Save as UTF-8 without BOM" >&2
                 echo "  3. Or use: sed -i '1s/^\xEF\xBB\xBF//' \"$FILE_PATH\"" >&2
-                exit 1
+                exit 2  # exit 2 = block (not just warning)
             fi
 
             # CRLF検出

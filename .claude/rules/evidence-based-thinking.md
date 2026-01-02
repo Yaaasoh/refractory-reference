@@ -1,202 +1,247 @@
-# 証拠ベース思考ルール（汎用版）
+# 証拠ベース思考ルール
 
 **対策対象**: FP-8（推測による実装）
 **優先度**: High
-**適用範囲**: すべてのパッケージ（technical, prompt-creation）
 **出典**: WORK_PROCESS_PROTOCOLS Protocol 1, vibration-diagnosis-prototype失敗事例
-
-## 概要
-
-このルールは、「推測」ではなく「証拠」に基づいて作業を進めることを徹底します。
-
-**証拠の定義**:
-- 実際に確認したドキュメント
-- 実際に読んだコード
-- 実際に実行した結果
-- 実際に受け取ったエラーメッセージ
-
-**推測の定義**:
-- 「〜だろう」「〜はず」に基づく判断
-- ドキュメントを読まずに判断
-- コードを読まずに判断
-- エラーメッセージを読まずに判断
 
 ## やってはいけないこと
 
-### 1. 推測による作業
+### 1. 推測による実装
 
 **絶対禁止**:
-- ドキュメントを読まずに「多分こうだろう」で進める
-- コードを読まずに「こう動くはず」で実装する
-- エラーメッセージを読まずに「よくあるエラー」と決めつける
+- コードを読まずに「〜だろう」で実装を進める
+- ドキュメントを確認せずに仕様を推測する
+- テストを書かずに「動くはず」で完了報告
 - APIレスポンスを確認せずに処理を書く
+- エラーメッセージを読まずに原因を推測する
 
-**具体例**:
+**具体例（vibration-diagnosis-prototype Sin 8）**:
 ```python
 # ❌ 悪い例：推測で実装
-# 推測: "get_user関数は多分dictを返すだろう"
-user = get_user(user_id)
-name = user['name']  # KeyError発生の可能性
+# 推測: "この関数は多分 dict を返すだろう"
+result = get_user_data(user_id)
+name = result['name']  # 推測で実装 → KeyError発生
 
 # ✅ 正しい例：コードを読んで確認
-# $ grep -A 5 "def get_user" src/users.py
-# 確認結果: Userオブジェクトを返す
+# $ grep -A 10 "def get_user_data" src/users.py
+# 確認結果: User オブジェクトを返す
 
-user = get_user(user_id)
-name = user.name  # 実際の仕様に基づいて実装
+result = get_user_data(user_id)
+name = result.name  # 実際の仕様に基づいて実装
 ```
 
-### 2. ドキュメントを読まない
+### 2. ドキュメントを読まずに実装
 
 **禁止**:
 - README.mdを読まずに開発開始
 - API仕様書を読まずに連携実装
-- 公式ドキュメントを読まずに問題解決
 - CLAUDE.mdを読まずにプロジェクトルール無視
+- CONTRIBUTING.mdを読まずにPR作成
 
 ### 3. エラーメッセージを無視
 
 **禁止**:
-- エラーメッセージを読まずに「いつものエラー」と決めつける
-- スタックトレースを確認せずに対処する
+- エラーメッセージを読まずに「よくあるエラー」と決めつける
+- スタックトレースを確認せずに原因を推測する
 - ログを確認せずにデバッグする
+- エラーコードを調べずに対処する
 
 ## やるべきこと
 
-### 1. Read First, Code Later
+### 1. コードを読む（Read the Code）
 
 **WORK_PROCESS_PROTOCOLS Protocol 1**:
 > 推測ではなく、実際のコードを読んで確認する
 
-**3ステップアプローチ**:
+**実践手順**:
 
-#### Step 1: Read（読む）
+#### a. 関数の仕様確認
 ```bash
-# ドキュメントを読む
-$ cat README.md
-$ cat API.md
+# 関数定義を確認
+$ grep -A 20 "def get_user_data" src/users.py
+
+# または Read ツールを使用
+# Read: src/users.py (該当行)
+```
+
+#### b. 戻り値の型確認
+```bash
+# 型ヒントを確認
+$ grep "def get_user_data" src/users.py
+def get_user_data(user_id: str) -> User:
+                                   ^^^^
+# User オブジェクトを返すことが確定
+```
+
+#### c. 実際の使用例を確認
+```bash
+# 既存の呼び出し元を探す
+$ grep -B 2 -A 5 "get_user_data(" src/**/*.py
+
+# 結果例:
+# src/auth.py:
+# user = get_user_data(user_id)
+# if user.is_active:  # ← .is_active プロパティを使用
+#     ...
+```
+
+### 2. ドキュメントを読む（Read the Docs）
+
+**必読ドキュメント**:
+- [ ] `README.md`: プロジェクト概要、セットアップ手順
+- [ ] `CLAUDE.md`: プロジェクトルール、禁止事項
+- [ ] `CONTRIBUTING.md`: コントリビューションガイドライン
+- [ ] `API.md` / `docs/api/`: API仕様
+- [ ] `ARCHITECTURE.md`: アーキテクチャ設計
+
+**読み方の例**:
+```bash
+# README.mdを最初に読む
+$ cat README.md | head -100
+
+# プロジェクト固有ルールを確認
 $ cat CLAUDE.md
 
-# コードを読む（Readツール、またはgrep）
-$ grep -A 10 "def function_name" src/*.py
+# API仕様を確認
+$ ls docs/api/
+users.md  auth.md  data.md
+
+$ cat docs/api/users.md
 ```
 
-#### Step 2: Verify（確認する）
-```bash
-# 実際に動かして確認
-$ python -c "from src.users import get_user; print(type(get_user(1)))"
-<class 'User'>  # Userオブジェクトを返すことを確認
+### 3. エラーメッセージを読む（Read the Error）
 
-# APIレスポンスを確認
-$ curl https://api.example.com/users/1
-{"id": 1, "name": "Test", "email": "test@example.com"}
-```
-
-#### Step 3: Implement（実装する）
-```python
-# 確認した証拠に基づいて実装
-user = get_user(user_id)  # Userオブジェクトを返すことを確認済み
-name = user.name           # .name属性でアクセス可能を確認済み
-```
-
-### 2. エラーメッセージを読む
-
-**正しい手順**:
+**エラー対応の正しい手順**:
 
 #### Step 1: エラーメッセージ全文を読む
 ```python
-Traceback (most recent call last):
-  File "app.py", line 42, in process_data
-    result = data['name']
-KeyError: 'name'
+# ❌ 悪い例：エラーの一部だけ見る
+# Traceback (most recent call last):
+#   File "app.py", line 42, in process_data
+#     result = data['name']
+# KeyError: 'name'  ← ここだけ見て「dictにnameがない」と判断
 
-# ← 全文を読む：dictにnameキーが存在しない
+# ✅ 正しい例：エラーメッセージ全文を読む
+# Traceback (most recent call last):
+#   File "app.py", line 42, in process_data
+#     result = data['name']
+# KeyError: 'name'
+#
+# During handling of the above exception, another exception occurred:
+# ...
+# ValueError: Invalid data format: expected dict, got list
+                                        ^^^^        ^^^^
+# ← 実際の問題は「dictではなくlistを受け取っている」
 ```
 
-#### Step 2: スタックトレースを追跡
+#### Step 2: スタックトレースを確認
 ```python
-# エントリポイントから問題箇所まで追跡
-File "app.py", line 10, in main
-  result = process_user(user_id)
-File "app.py", line 25, in process_user
-  data = fetch_data(user_id)
-File "api.py", line 50, in fetch_data
-  return response.json()  # ← 問題箇所
+# スタックトレースから呼び出し経路を追跡
+Traceback (most recent call last):
+  File "app.py", line 10, in main
+    result = process_user(user_id)  ← エントリポイント
+  File "app.py", line 25, in process_user
+    data = fetch_data(user_id)      ← データ取得
+  File "api.py", line 50, in fetch_data
+    return response.json()          ← 問題箇所
 KeyError: 'name'
+
+# 問題箇所: api.py:50 の response.json() が期待した形式と異なる
 ```
 
 #### Step 3: 原因を特定
 ```bash
-# APIレスポンスを実際に確認
-$ curl https://api.example.com/users/123
-{"id": 123, "username": "test"}  # 'name'ではなく'username'
+# APIレスポンスを確認
+$ curl https://api.example.com/users/user-123
+[{"id": "user-123", "name": "Test"}]  # list を返している！
+                                      # （期待: dict）
 
-# 修正
-- name = data['name']
-+ name = data['username']
+# コードを修正
+- data = response.json()        # list が返る
++ data = response.json()[0]     # list の最初の要素を取得
 ```
 
-### 3. 証拠収集のチェックリスト
+### 4. 証拠収集のパターン
 
-**作業前**:
-- [ ] 関連ドキュメントを読んだか？
-- [ ] 関連コードを読んだか？
+#### パターン1: 関数の仕様確認
+```markdown
+**目的**: `calculate_total` 関数の戻り値の型を確認
+
+**証拠収集**:
+1. Read ツールで関数定義を確認
+   → `def calculate_total(items: List[Item]) -> Decimal:`
+2. 既存の使用例を Grep で検索
+   → `total = calculate_total(items)` （10箇所で使用）
+3. テストコードを Read で確認
+   → `assert calculate_total([]) == Decimal('0.00')`
+
+**結論**: Decimal型を返す、空リストの場合は Decimal('0.00')
+```
+
+#### パターン2: API仕様確認
+```markdown
+**目的**: `/api/users/{id}` エンドポイントのレスポンス形式確認
+
+**証拠収集**:
+1. API仕様書を Read
+   → `docs/api/users.md` に記載あり
+2. 実際のレスポンスを Bash (curl) で確認
+   → `{"id": "...", "name": "...", "email": "..."}`
+3. 既存の呼び出し元を Grep で検索
+   → `user.email` でアクセスしている箇所を発見
+
+**結論**: JSON object を返す、emailフィールドあり
+```
+
+#### パターン3: エラー原因の特定
+```markdown
+**目的**: `TypeError: 'NoneType' object is not subscriptable` の原因特定
+
+**証拠収集**:
+1. スタックトレースを読む
+   → `data[0]` でエラー、data が None
+2. data の取得元を Read で確認
+   → `data = fetch_data(url)` が None を返している
+3. fetch_data の実装を Read で確認
+   → エラー時に None を返す仕様（要改善）
+
+**結論**: fetch_data がエラー時に None を返す、エラーハンドリングが必要
+```
+
+## 証拠ベース実装のチェックリスト
+
+**実装前**:
+- [ ] 関連するコードを読んだか？
+- [ ] 仕様書・ドキュメントを読んだか？
 - [ ] 既存の使用例を確認したか？
-- [ ] 不明点をユーザーに質問したか？
+- [ ] 不明点をユーザーに質問したか？（AskUserQuestion）
 
-**作業中**:
-- [ ] 推測ではなく、確認した事実に基づいているか？
+**実装中**:
+- [ ] 推測ではなく、確認した仕様に基づいて実装しているか？
 - [ ] エラーが出たら、メッセージ全文を読んだか？
 - [ ] ログ・デバッグ出力を確認したか？
 
-**作業後**:
-- [ ] 実際に動作を確認したか？
-- [ ] テストで検証したか？
+**実装後**:
+- [ ] テストで実際の動作を確認したか？
+- [ ] エッジケース・エラーケースを確認したか？
 - [ ] ドキュメントと実装が一致しているか？
 
-## 証拠の記録
+## 例外処理
 
-### 証拠を残す理由
+### 例外が許される場合
 
-**透明性**:
-- なぜこの実装にしたのか、後から追跡可能
+1. **プロトタイピング**
+   - **条件**: ユーザーが「とりあえず動くもの」を明示的に要求
+   - **手順**:
+     1. 「プロトタイプ」であることを明記
+     2. 推測箇所を TODO コメントで記載
+     3. 本実装時に証拠ベースで再実装
 
-**再現性**:
-- 同じ問題が起きた時、すぐに原因特定可能
-
-**学習**:
-- チーム全体で知見を共有可能
-
-### 記録の例
-
-```markdown
-## 実装記録: get_user関数の戻り値
-
-### 調査日: 2025-12-27
-
-### 証拠1: コード確認
-```bash
-$ grep -A 10 "def get_user" src/users.py
-def get_user(user_id: str) -> User:
-    """ユーザー情報を取得"""
-    return User.query.get(user_id)
-```
-
-### 証拠2: 既存使用例
-```bash
-$ grep "get_user(" src/**/*.py
-src/auth.py: user = get_user(user_id)
-src/auth.py: if user.is_active:  # .is_active 属性を使用
-```
-
-### 証拠3: 型ヒント
-- 戻り値: `User` オブジェクト
-- `User` クラスは `src/models/user.py` で定義
-
-### 結論
-- `get_user` は `User` オブジェクトを返す
-- `user.name`, `user.email`, `user.is_active` 等の属性でアクセス可能
-```
+2. **時間制約のある緊急対応**
+   - **条件**: 本番障害等の緊急対応
+   - **手順**:
+     1. 最小限の確認で暫定対応
+     2. 事後に詳細な証拠収集と恒久対策
 
 ## 防御層（Multi-layer Defense）
 
@@ -206,81 +251,93 @@ src/auth.py: if user.is_active:  # .is_active 属性を使用
 
 ### Layer 2: Skills
 - **効果**: 中（コンテキストに応じて起動）
-- **スキル**:
-  - `root-cause-analyzer`（technical-projects-cli）
-  - `prompt-purpose-validator`（prompt-creation-projects-cli）
-- **機能**: 証拠収集の誘導、根本原因追究
+- **スキル**: `root-cause-analyzer`
+- **機能**:
+  - エラー発生時に証拠収集を誘導
+  - スタックトレース分析
+  - 根本原因の追究
 
 ### Layer 3: Hooks
-- **効果**: （証拠ベース思考はHookでの強制が困難）
-- **代替**: Skill自動起動で証拠収集を促す
+- **効果**: 強（実装前に確認促進）
+- **フック**: （証拠ベース思考はHookでの強制が困難）
+- **代替**: Skill自動起動で実装前に証拠収集を促す
 
 ## ベストプラクティス
 
-### 1. Documentation First
+### 1. "Read First, Code Later"
 
 **原則**:
-> コードを書く前に、ドキュメントを読む
-
-**チェックポイント**:
-- [ ] README.md を読んだ
-- [ ] CLAUDE.md を読んだ
-- [ ] API仕様書を読んだ
-- [ ] 関連するIssue/PRを確認した
-
-### 2. Code as Documentation
-
-**原則**:
-> コードは嘘をつかない、コメントは嘘をつく
+> コードを書く前に、必ず関連するコード・ドキュメントを読む
 
 **実践**:
-```python
-# ❌ 悪い例：コメントを信じる
-# この関数はdictを返す
-user = get_user(user_id)
+```markdown
+# タスク: ユーザー認証機能の追加
 
-# ✅ 良い例：コードを読む
-# $ grep "def get_user" src/users.py
-# → def get_user(user_id: str) -> User:
-user = get_user(user_id)
+## Step 1: Read (証拠収集)
+- [x] 既存の認証機能を Read で確認
+- [x] 認証ライブラリのドキュメント確認
+- [x] 既存のテストコードを確認
+
+## Step 2: Plan (計画)
+- [ ] 既存パターンに従った実装計画
+- [ ] テスト戦略
+
+## Step 3: Code (実装)
+- [ ] 証拠に基づいた実装
 ```
 
-### 3. Trust but Verify
+### 2. "Trust but Verify"
 
 **原則**:
 > ドキュメントを信頼するが、コードで検証する
 
 **実践**:
-```markdown
-1. ドキュメント: "get_user はUserオブジェクトを返す"
-2. 信頼する
-3. しかし検証: `grep "def get_user" src/users.py`
-4. 確認: 実際にUserオブジェクトを返す
-5. 実装: 検証した事実に基づいて実装
+```bash
+# ドキュメント: "この関数は User オブジェクトを返す"
+# → 信頼する、しかし検証する
+
+$ grep -A 10 "def get_user" src/users.py
+# → 実際の実装を確認
+
+$ grep "get_user(" src/**/*.py
+# → 実際の使用例を確認
+
+# 検証結果: ドキュメント通り User オブジェクトを返す
+```
+
+### 3. "Error Messages are Your Friend"
+
+**原則**:
+> エラーメッセージは敵ではなく、問題解決のヒント
+
+**実践**:
+```python
+# エラーメッセージを丁寧に読む
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   ^^^     ^^^
+           演算子 + が使えない                int型    str型
+
+# エラーメッセージから原因を特定
+# → int と str を + しようとしている
+# → どちらかを型変換する必要がある
 ```
 
 ## 関連ドキュメント
 
-### パッケージ固有ルール
-- `technical-projects-cli/docs/rules/evidence-based-thinking.md` - 詳細版（技術系）
-- `technical-projects-cli/docs/rules/implementation.md` - 実装品質
-- `prompt-creation-projects-cli/docs/rules/purpose-first.md` - 目的優先
-
-### 共有ルール
-- `shared/rules/anti-tampering-rules.md` - 改ざん防止
-- `shared/rules/hook-response-protocol.md` - Hook対応
+- `implementation.md`: 実装品質ルール
+- `test.md`: テスト品質ルール
+- `root-cause-analyzer` (Skill): 根本原因分析
+- `phase3-use-cases-tips/step3.5-failure-case-analysis.md`: FP-8詳細
 
 ## 参考リンク
 
-- [vibration-diagnosis-prototype WORK_PROCESS_PROTOCOLS](vibration-diagnosis-prototype/docs/WORK_PROCESS_PROTOCOLS_20251227.md): Protocol 1
+- [vibration-diagnosis-prototype WORK_PROCESS_PROTOCOLS](vibration-diagnosis-prototype/docs/WORK_PROCESS_PROTOCOLS_20251227.md): Protocol 1（Evidence-Based Thinking）
 - [vibration-diagnosis-prototype CRITICAL_FAILURE_REPORT](vibration-diagnosis-prototype/docs/CRITICAL_FAILURE_REPORT_20251226.md): Sin 8
-- [The Pragmatic Programmer](https://pragprog.com/): 実用的プログラミング
+- [The Pragmatic Programmer - Debug](https://pragprog.com/): デバッグ手法
+- [Google Engineering Practices - Code Review](https://google.github.io/eng-practices/review/): コードレビューでの証拠確認
 
 ---
 
 **最終更新**: 2025-12-27
 **バージョン**: 1.0
-**ステータス**: Phase 4統合版（汎用）
-**適用**: すべてのパッケージ
-
-**Note**: 技術系プロジェクトでより詳細なガイドが必要な場合は、`technical-projects-cli/docs/rules/evidence-based-thinking.md`（詳細版）を参照してください。
+**ステータス**: Phase 4統合版
