@@ -140,5 +140,6 @@
 | TPC | Torpedo Car | 溶銑搬送車 |
 | BOF | Basic Oxygen Furnace | 転炉 |
 | EAF | Electric Arc Furnace | 電気炉 |
+| CC | Continuous Casting | 連続鋳造（連鋳） |
 
 ---
