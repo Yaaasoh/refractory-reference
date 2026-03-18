@@ -1,7 +1,11 @@
 # エンコーディング・改行コード設定
 # BOM付きUTF-8問題の再発防止
+#
+# 注意: encoding=UTF-8 はソースコード系のみに適用
+# .txt/.csv は非UTF-8（CP932等）が混在しうるため text=auto を使用
+# text=auto: gitがバイナリ/テキストを自動判定し、非UTF-8は変換をスキップ
 
-# テキストファイル共通設定
+# ソースコード（UTF-8前提が安全な拡張子）
 *.sh text eol=lf encoding=UTF-8
 *.bash text eol=lf encoding=UTF-8
 *.py text eol=lf encoding=UTF-8
@@ -11,8 +15,10 @@
 *.md text eol=lf encoding=UTF-8
 *.yaml text eol=lf encoding=UTF-8
 *.yml text eol=lf encoding=UTF-8
-*.txt text eol=lf encoding=UTF-8
-*.csv text eol=lf encoding=UTF-8
+
+# データファイル（CP932等の非UTF-8が混在しうる）
+*.txt text=auto eol=lf
+*.csv text=auto eol=lf
 
 # BOM禁止（シェルスクリプト）
 *.sh text eol=lf -crlf working-tree-encoding=UTF-8
