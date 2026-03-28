@@ -1,0 +1,17 @@
+{
+  "_metadata": {
+    "source": "ocr-app MCP server (ocr_app.mcp.server)",
+    "extracted": "2026-03-08",
+    "usage": "Claude Code settings.json の mcpServers セクションにマージして使用（手動）",
+    "note": "MCP経由のエンジンはauto/yomitoku/ndlocrの3択。gcp(GCP Vision API)はCLI(workflow run)専用"
+  },
+  "mcpServers": {
+    "ocr-app": {
+      "command": "py",
+      "args": ["-3.11", "-m", "ocr_app.mcp.server"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GCP_SERVICE_ACCOUNT_KEY_PATH}"
+      }
+    }
+  }
+}

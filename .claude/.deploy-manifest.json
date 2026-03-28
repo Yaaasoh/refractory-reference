@@ -1,0 +1,670 @@
+{
+  "_comment": "prompt-patterns deploy.sh が管理。手動編集禁止",
+  "deployed_at": "2026-03-27T23:01:46Z",
+  "package": "technical",
+  "source_commit": "2abbf34",
+  "files": {
+    "hooks/README.md": {
+      "checksum": "e4e1415c02e61e47f5b9c97100e18b54a31cad018fdcc5e1af7f96bba96dfd9e",
+      "source": "shared/hooks/README.md"
+    },
+    "hooks/auto_activate_skills.sh": {
+      "checksum": "a64d613b4eafa6e9503253cb343265f571644e55d0f6bb267733bdb2d1935850",
+      "source": "shared/hooks/auto_activate_skills.sh"
+    },
+    "hooks/block_destructive.sh": {
+      "checksum": "20dbeffc59c687317904deb8a39c99ea486f2edd557d698956d426a5ba9272fd",
+      "source": "shared/hooks/block_destructive.sh"
+    },
+    "hooks/check_encoding.sh": {
+      "checksum": "021c7007730fb61147458e39836d0c7d9fb5a2b42013b2153472b4ed0ca9aa35",
+      "source": "shared/hooks/check_encoding.sh"
+    },
+    "hooks/check_file_size.sh": {
+      "checksum": "1e44bfe9d87af7706d24f0ba2f28a291f07452e1e06f5ea0e239790617ab61f9",
+      "source": "shared/hooks/check_file_size.sh"
+    },
+    "hooks/check_public_repo.sh": {
+      "checksum": "eb4a88ec4fa791d09c214f3b19e35d188666d94f03f819dd8d1e7c0275b6e0ce",
+      "source": "shared/hooks/check_public_repo.sh"
+    },
+    "hooks/check_uncommitted.sh": {
+      "checksum": "1fc72f0b55946d8ec227d1f33f22699b84e94483b06b6893690bc69ee1329afb",
+      "source": "shared/hooks/check_uncommitted.sh"
+    },
+    "hooks/config_change_guard.sh": {
+      "checksum": "481369475ae5bf3df102eb3e8a5e5f54618b49096e31f2533d738c971e48c638",
+      "source": "shared/hooks/config_change_guard.sh"
+    },
+    "hooks/diagram_quality_check.sh": {
+      "checksum": "31f9c239af27596d7e87fb21e5dac28a260e1884e9502ccc8670a99be1d9c0a0",
+      "source": "shared/hooks/diagram_quality_check.sh"
+    },
+    "hooks/memory_db_export.sh": {
+      "checksum": "bccc3ee50bd4630fe62eaf5eed9fc8b5086bd51cd41ba8142b2981ed47c9a607",
+      "source": "shared/hooks/memory_db_export.sh"
+    },
+    "hooks/memory_db_rebuild.sh": {
+      "checksum": "879fef0f4200497745a8daa5d96793a20f38df60edb1b0d871918022ca0a60ae",
+      "source": "shared/hooks/memory_db_rebuild.sh"
+    },
+    "hooks/memory_db_sync.sh": {
+      "checksum": "e21a67b725c0c96ef58dce388fab18c41b0ab5d2b34835b0f089b692bbd81406",
+      "source": "shared/hooks/memory_db_sync.sh"
+    },
+    "hooks/ocr_workflow_check.sh": {
+      "checksum": "5205dd56eb5988f90c025368fb091b00790b5700d5100d2a732e98d7ecbf5a36",
+      "source": "shared/hooks/ocr_workflow_check.sh"
+    },
+    "hooks/plan_mode_reminder.sh": {
+      "checksum": "ce10a8dd9e442ccb31f8bbb5eb7f2cca21c0f10629b2548c876ffdab996587c3",
+      "source": "shared/hooks/plan_mode_reminder.sh"
+    },
+    "hooks/prevent_false_completion.sh": {
+      "checksum": "5374eaabcaeccc2c396fda6a99872f700755ad5d10fdb3ddeb5746f25a0701f0",
+      "source": "shared/hooks/prevent_false_completion.sh"
+    },
+    "hooks/protect_embeddings.sh": {
+      "checksum": "95a68a2c1a688373899cc132f3b94e84e7a032c018de85e96478aa80c1baa2cc",
+      "source": "shared/hooks/protect_embeddings.sh"
+    },
+    "hooks/python_path_diagnose.sh": {
+      "checksum": "b2277e9b7b3b61a44df4cb253d61e6bc8e7db3d3bb4c997b9026f041d40b5b37",
+      "source": "shared/hooks/python_path_diagnose.sh"
+    },
+    "hooks/python_path_guard.sh": {
+      "checksum": "f736a1350a992c281d4acd8cf95711c3af82947ed9c7c76596afde1475a397e0",
+      "source": "shared/hooks/python_path_guard.sh"
+    },
+    "hooks/shellcheck_quality_loop.sh": {
+      "checksum": "2b95f11c719aca439cea21e3c81a19f9edefa37bc7432ab266f04d9a327d78a9",
+      "source": "shared/hooks/shellcheck_quality_loop.sh"
+    },
+    "hooks/tdd-guard.sh": {
+      "checksum": "5cd012e77d34fa1044bd8aeab4e0b2abb0ee449c74da92fcc6c58d016d13a441",
+      "source": "shared/hooks/tdd-guard.sh"
+    },
+    "hooks/transcript_work_check.sh": {
+      "checksum": "24c450e48b2c0259f0d88477811ff105c333c17482c1c47339175fa93a0dcd53",
+      "source": "shared/hooks/transcript_work_check.sh"
+    },
+    "commands/checkpoint.md": {
+      "checksum": "e15a2995690aa7dfb05f2696508f04d6798976009608eb748a312220aa362d61",
+      "source": "shared/commands/checkpoint.md"
+    },
+    "commands/finish.md": {
+      "checksum": "ced1cf272bee40ce9f0e01210c1c3dabe26bf84de4226004580f960fe8758bba",
+      "source": "shared/commands/finish.md"
+    },
+    "commands/investigate.md": {
+      "checksum": "06d0c16ce2a06514cae29114675fdc5dcfef8ee88ec31c64174da6e027e5e2a8",
+      "source": "shared/commands/investigate.md"
+    },
+    "commands/local-investigate.md": {
+      "checksum": "082d66473948a193f4959a2340bb9ad2dbe02565b72006a84dcedcfd2577bca8",
+      "source": "shared/commands/local-investigate.md"
+    },
+    "commands/lookup-docs.md": {
+      "checksum": "e512a00c453553ce63ba07ef5e4e31dfd5af3be28ea4239ca402871b40a4fb57",
+      "source": "shared/commands/lookup-docs.md"
+    },
+    "commands/ocr-workflow.md": {
+      "checksum": "c1e6b28e456c7c6097180a65d1741c5d836f302190b1e962ddca2092e9df3391",
+      "source": "shared/commands/ocr-workflow.md"
+    },
+    "commands/recover.md": {
+      "checksum": "b0fa15bf3553cb37604a35ab557aa5207d8664cc8b97f23d60d5b091f533a482",
+      "source": "shared/commands/recover.md"
+    },
+    "commands/report.md": {
+      "checksum": "56e3846ecc856462c50c7cd5aab8d3d70d7e41975c9809df285998d7819f4583",
+      "source": "shared/commands/report.md"
+    },
+    "commands/safe-push.md": {
+      "checksum": "e4f685ff5ca574e001b1ff2120e800e40bfa902c1097f5e93be4aae1f018b8ec",
+      "source": "shared/commands/safe-push.md"
+    },
+    "commands/safety-check.md": {
+      "checksum": "00a041c530fc31e6a54798413a96bc9abd993461bb1015ec3d3b56db29363aaf",
+      "source": "shared/commands/safety-check.md"
+    },
+    "commands/scrutinize-verify.md": {
+      "checksum": "5dfaad0fd9f3358cd00b54e287c366d3c91ba08018d01cf5b5e2008d614fe829",
+      "source": "shared/commands/scrutinize-verify.md"
+    },
+    "commands/scrutinize.md": {
+      "checksum": "574c3a483f1dba0649352400c59659ef490b5fa34d64a2394bd337dabc7863fd",
+      "source": "shared/commands/scrutinize.md"
+    },
+    "commands/suggest-claude-md.md": {
+      "checksum": "63cef7f699aff51bcc05ad597b9ac7148e873dd1265cb2be192b9306caf0d359",
+      "source": "shared/commands/suggest-claude-md.md"
+    },
+    "commands/sync.md": {
+      "checksum": "7dd179e7650b937829da3c13c53227fb519b9bd2674713ac49d3b02ac4bb2fee",
+      "source": "shared/commands/sync.md"
+    },
+    "commands/test-coverage.md": {
+      "checksum": "78e1581ac5c7e33e5ee202c615478ffbf4e6d71a7f5d33027d891d816b60def2",
+      "source": "shared/commands/test-coverage.md"
+    },
+    "commands/test-generate.md": {
+      "checksum": "54ce60f42fc2a6054aab4eafd32c71f73c4411fea104a629a6f204cd20788d8b",
+      "source": "shared/commands/test-generate.md"
+    },
+    "commands/troubleshoot.md": {
+      "checksum": "b173cc016a5e3c1d5eeba5ec20135a46e9a7b0c287932050ecef697ee086a895",
+      "source": "shared/commands/troubleshoot.md"
+    },
+    "commands/update-docs.md": {
+      "checksum": "b4a6512cb1aba97291b040ab8d9a7605724539aec9c9434e1efb38e75208c084",
+      "source": "shared/commands/update-docs.md"
+    },
+    "skills/comparative-analyzer/SKILL.md": {
+      "checksum": "877101fd56e064c6fc9874d57057659502dfcdd91c9644b0d45c4c6e8d609cf1",
+      "source": "shared/skills/comparative-analyzer/SKILL.md"
+    },
+    "skills/consistency-checker/SKILL.md": {
+      "checksum": "9aefaccaba4f435d910bb94fcd06b9eb1ef11d822f2f4007bb79ef47242a323c",
+      "source": "shared/skills/consistency-checker/SKILL.md"
+    },
+    "skills/design-token-validator/SKILL.md": {
+      "checksum": "b0b8e17ffcbc0a4f750be984bac8fd79289d74596e88898b8f385cda6883ca6e",
+      "source": "shared/skills/design-token-validator/SKILL.md"
+    },
+    "skills/diagram-generator/SKILL.md": {
+      "checksum": "a891aa8029454d52edee7cb9e98a11e2cc35196f8e7c443d1e9815d84cef472f",
+      "source": "shared/skills/diagram-generator/SKILL.md"
+    },
+    "skills/example-transcript-correction/SKILL.md": {
+      "checksum": "8f013621fec7fff2239e60b84a67b4451ac959103445fa70035ebcc67abcb9ad",
+      "source": "shared/skills/example-transcript-correction/SKILL.md"
+    },
+    "skills/frontend-design/SKILL.md": {
+      "checksum": "b3a1b3e57652303764877385fe5258951160181f90c347faf7c29e10223a9c15",
+      "source": "shared/skills/frontend-design/SKILL.md"
+    },
+    "skills/frontend-design/reference/accessibility.md": {
+      "checksum": "050cbf877528b7d9a90d3c1342056f97e73dae32923c41840b348195a498b6ee",
+      "source": "shared/skills/frontend-design/reference/accessibility.md"
+    },
+    "skills/frontend-design/reference/dark-mode.md": {
+      "checksum": "4f374f2e22abf662d656dfdac82b272ac5a60618972f40d347e1881c63e56dfa",
+      "source": "shared/skills/frontend-design/reference/dark-mode.md"
+    },
+    "skills/frontend-design/reference/interaction-design.md": {
+      "checksum": "4ee6ad51c7b92158234d097cfa1c44e10262d6e05de871b354d39d5e99d0ec2c",
+      "source": "shared/skills/frontend-design/reference/interaction-design.md"
+    },
+    "skills/frontend-design/reference/performance.md": {
+      "checksum": "47bbf018c7c1ebc83ca7ea7091256c8aa1a2f7de548105c9176304aecccb1a0e",
+      "source": "shared/skills/frontend-design/reference/performance.md"
+    },
+    "skills/frontend-design/reference/responsive-design.md": {
+      "checksum": "a7bb6acca33b507084ad40b5fd9d51f74c42f8d73fc4e3decd15fc8a72240e17",
+      "source": "shared/skills/frontend-design/reference/responsive-design.md"
+    },
+    "skills/frontend-design/reference/ux-writing.md": {
+      "checksum": "8ea55056203c04712683b525774031bba6adc68c1fb458c7c5ade6abcfd47014",
+      "source": "shared/skills/frontend-design/reference/ux-writing.md"
+    },
+    "skills/ocr-document-converter/SKILL.md": {
+      "checksum": "987e90ea9f4051cade08b34cfd129c66c2a02a31fcf96f7e373486a0a89eed88",
+      "source": "shared/skills/ocr-document-converter/SKILL.md"
+    },
+    "skills/react-best-practices/AGENTS.md": {
+      "checksum": "429c1907de1ee4432fe9dc69476b62118dfc4849c36f96d9999472f48f3c9fa8",
+      "source": "shared/skills/react-best-practices/AGENTS.md"
+    },
+    "skills/react-best-practices/SKILL.md": {
+      "checksum": "81bad0edc74bc4969ea6abf75b0f84dd99a0557fb0d52a2f74c06cf0567833e1",
+      "source": "shared/skills/react-best-practices/SKILL.md"
+    },
+    "skills/verification-enforcer/SKILL.md": {
+      "checksum": "3d8f5504918d60bec9325ab0e8b2221b977175deda808c5ae4341975de13db47",
+      "source": "technical-projects-cli/.claude/skills/verification-enforcer/SKILL.md"
+    },
+    "agents/code-reviewer.md": {
+      "checksum": "706fa6629c57a47375519d4b937443ccd10ddff2089f9a5a2e4febd29b1eed52",
+      "source": "shared/agents/code-reviewer.md"
+    },
+    "agents/codebase-explorer.md": {
+      "checksum": "1e547f4ad7478cca9d8a8dcdc8ea11c4ea3cacc706a67d09b6e112097054cec4",
+      "source": "shared/agents/codebase-explorer.md"
+    },
+    "agents/deploy-verifier.md": {
+      "checksum": "fb850ff1f7eae4f33e91e85d05e0cda6fc751f288baf5dc728a8b2ff69e4f497",
+      "source": "shared/agents/deploy-verifier.md"
+    },
+    "agents/diagram-verifier.md": {
+      "checksum": "db4ac8a3c32ba64dab4105f489f8e44e2bbf2c90c86f4581437c27656a1f57ba",
+      "source": "shared/agents/diagram-verifier.md"
+    },
+    "agents/file-categorizer.md": {
+      "checksum": "e6b2c83d5e42114657df2ae3f512dfa2d5382655a3eeac88da3f462a9175dee5",
+      "source": "shared/agents/file-categorizer.md"
+    },
+    "agents/local-llm-investigator.md": {
+      "checksum": "59530ce90ca3c09e3f1b89c246afadced6cff242ec2bb6ef0d3e4d28cd258b8a",
+      "source": "shared/agents/local-llm-investigator.md"
+    },
+    "agents/multi-repo-checker.md": {
+      "checksum": "be132587db10db948a5d36192cadd269988ec0b7ed760391900d6d00f87db60c",
+      "source": "shared/agents/multi-repo-checker.md"
+    },
+    "agents/session-log-reader.md": {
+      "checksum": "4e8f23c67efa6b2d398afaffdad0b083723a5182f5b1e2ffe1315a3342b2f899",
+      "source": "shared/agents/session-log-reader.md"
+    },
+    "agents/test-debug-agent.md": {
+      "checksum": "b507632ae619bc26eaba159814de0943c7b3d9d5eac168601575f66ee49c42ab",
+      "source": "shared/agents/test-debug-agent.md"
+    },
+    "agents/web-researcher.md": {
+      "checksum": "bb5a2b000b38d119a6764043457288f8105baba6a7c58f966d49601a5a43b88a",
+      "source": "shared/agents/web-researcher.md"
+    },
+    "rules/anti-tampering-rules.md": {
+      "checksum": "d94ba31365cb4031e26805eb5b54b9c777d9bdc40fae5ec82e8353c97eb2b9d6",
+      "source": "shared/rules/anti-tampering-rules.md"
+    },
+    "rules/deployment.md": {
+      "checksum": "cfe042bffb7742741c555922f578c1693b735dd742be405435881ae2c3034dbb",
+      "source": "shared/rules/deployment.md"
+    },
+    "rules/diagram-generation.md": {
+      "checksum": "7c12befb0d8e041ed81ef2e6c3b5c38d70bd77309a55da7f0e07738388810b91",
+      "source": "shared/rules/diagram-generation.md"
+    },
+    "rules/document-quality.md": {
+      "checksum": "806c794e6e558bc987f26a715ef1d75bcfab673bab9aa0f3ed2263bf4da8fbad",
+      "source": "shared/rules/document-quality.md"
+    },
+    "rules/evidence-based-thinking.md": {
+      "checksum": "7a6bbca78fb7ef499e6f2793be325490a74b8b183924b34e279cff3726fb4de7",
+      "source": "shared/rules/evidence-based-thinking.md"
+    },
+    "rules/hook-response-protocol.md": {
+      "checksum": "b8d0d6c60e4921711b13818f84f3e158c6d1aebc6946791c985b78ff825f017f",
+      "source": "shared/rules/hook-response-protocol.md"
+    },
+    "rules/plan-mode.md": {
+      "checksum": "6cea05f63dd9bcee80b4c2df9b6fe658a0822055702f6794722d9e6afcf1bc49",
+      "source": "shared/rules/plan-mode.md"
+    },
+    "rules/transcript-work.md": {
+      "checksum": "6d76ee91c016f550f48e872fda3077905bb1868aeae1c1bd7be129cb9014d097",
+      "source": "shared/rules/transcript-work.md"
+    },
+    "docs/DEPLOYMENT_GUIDE.md": {
+      "checksum": "410fbdfd9d7ce751fb60d5bced1b69c907d15192a56381e744fdee1bf4021bc2",
+      "source": "shared/docs/DEPLOYMENT_GUIDE.md"
+    },
+    "docs/HOOK_PATTERNS.md": {
+      "checksum": "3cf6804d1a12d5f7fbfe80ad2c34fd21f726c54349ca5623ad0d020d7fa1a8be",
+      "source": "shared/docs/HOOK_PATTERNS.md"
+    },
+    "docs/PROGRESSIVE_DISCLOSURE.md": {
+      "checksum": "037b30e26a5f97086a2f57f57172fe419a386bfab495754e80aa9b2ad87af174",
+      "source": "shared/docs/PROGRESSIVE_DISCLOSURE.md"
+    },
+    "docs/YAML_FRONTMATTER_GUIDE.md": {
+      "checksum": "090b155a649d6235a01f022755298743ac6d9af7d6dbfdf153feecdfb52acfba",
+      "source": "shared/docs/YAML_FRONTMATTER_GUIDE.md"
+    },
+    "docs/guides/local-llm-setup-guide.md": {
+      "checksum": "0507c5893e90e84ccc9fe17b0aa049e18b3d683507010d1c660bf79826e9c00b",
+      "source": "shared/docs/guides/local-llm-setup-guide.md"
+    },
+    "docs/guides/memory-db-setup-guide.md": {
+      "checksum": "57210b9d529572b6cc2596bd6af40c7113c4b5fe3febad8acdd6b383159663f6",
+      "source": "shared/docs/guides/memory-db-setup-guide.md"
+    },
+    "docs/guides/task-system-guide.md": {
+      "checksum": "5bd787327f5df2371f030eb100d3727642705de673cde40a3f47a66a91bfaab5",
+      "source": "shared/docs/guides/task-system-guide.md"
+    },
+    "docs/guides/typescript-implementation-guide.md": {
+      "checksum": "4c182c1d2dfec0cfcf4508aaa31d7bfc20edd521ce662dc3a0092636c339f832",
+      "source": "shared/docs/guides/typescript-implementation-guide.md"
+    },
+    "docs/lessons/ATONEMENT_SYSTEM.md": {
+      "checksum": "76ece627ad1e7c600c86f5b887fc60ebf0be19ba3959d339e8015c89f2d7a436",
+      "source": "shared/docs/lessons/ATONEMENT_SYSTEM.md"
+    },
+    "docs/principles/COMMUNICATION_PRINCIPLES.md": {
+      "checksum": "f50c0151e5035760280a02ccb77baf4b7f9830ba1d35b09604a5c01f316350ff",
+      "source": "shared/docs/principles/COMMUNICATION_PRINCIPLES.md"
+    },
+    "docs/principles/TEST_PROCESS_REQUIREMENTS.md": {
+      "checksum": "80aaf8f1fde0823ba60763114822eea728710d3ab154f897b78907c265aa12ef",
+      "source": "shared/docs/principles/TEST_PROCESS_REQUIREMENTS.md"
+    },
+    "docs/templates/README.md": {
+      "checksum": "70706c875f85872a0873bad920ba0476c9e9a6c876a0423d30a6a3bfd9b80976",
+      "source": "shared/docs/templates/README.md"
+    },
+    "docs/templates/SETTINGS_UPDATE_NOTICE_202601.md": {
+      "checksum": "03e47f05306efe200f5b195ffa8f51a0b4afb3d70922bbed1effe4bbda969ac5",
+      "source": "shared/docs/templates/SETTINGS_UPDATE_NOTICE_202601.md"
+    },
+    "docs/templates/agent-configs/README.md": {
+      "checksum": "e5ac253f4c9d2754734cb68b8dc6d7cd61f0816e8e4cd8826ba7a397058aae0e",
+      "source": "shared/docs/templates/agent-configs/README.md"
+    },
+    "docs/templates/agent-configs/agent.deploy.md.template": {
+      "checksum": "0d6105d08c4691b11eabd46934e8d9ca12642fae3bd924d893d671e52029219a",
+      "source": "shared/docs/templates/agent-configs/agent.deploy.md.template"
+    },
+    "docs/templates/agent-configs/agent.md.template": {
+      "checksum": "eb026af863c97ee7ee750715783ef1d8bbf8ff60833d0386787e0fd304df792c",
+      "source": "shared/docs/templates/agent-configs/agent.md.template"
+    },
+    "docs/templates/agent-configs/agent.research.md.template": {
+      "checksum": "3ea0d5513cdfb3ae722655ffdfe747fe9f063ace8749ec6e553cf52731038a3a",
+      "source": "shared/docs/templates/agent-configs/agent.research.md.template"
+    },
+    "docs/templates/agent-configs/agent.writing.md.template": {
+      "checksum": "ef1b1372b27f8ea0ca18def718234f4d7ba9d2fe690cf38a3d31226f3216a357",
+      "source": "shared/docs/templates/agent-configs/agent.writing.md.template"
+    },
+    "docs/templates/checkpoint/CHECKPOINT_TEMPLATE.md": {
+      "checksum": "6e1cd9d9c1408ab8d1db76ca88db108173dfee5124e152740bf5ab7bd08c44c0",
+      "source": "shared/docs/templates/checkpoint/CHECKPOINT_TEMPLATE.md"
+    },
+    "docs/templates/claude-md/CLAUDE_MD_TEMPLATE.md": {
+      "checksum": "eb14f2c876134a24927db41dad730db339fc79292b5e83164c8fed895bf533d1",
+      "source": "shared/docs/templates/claude-md/CLAUDE_MD_TEMPLATE.md"
+    },
+    "docs/templates/claude-md/frontend-aesthetics.md": {
+      "checksum": "96121a6d6e41a3e4b999d9df2b3a21f9519c2270aea81fe184ee074609443736",
+      "source": "shared/docs/templates/claude-md/frontend-aesthetics.md"
+    },
+    "docs/templates/commands/typescript/README.md": {
+      "checksum": "a81ef0dcd5c877d914401b959bb06b79710e027c9588ea9c357fa8e7627b4bdb",
+      "source": "shared/docs/templates/commands/typescript/README.md"
+    },
+    "docs/templates/commands/typescript/new-component.md": {
+      "checksum": "493c6ea4d7572f56fdcb204c25a56fd10b9988167a577ebda2e86d12fbd8ccae",
+      "source": "shared/docs/templates/commands/typescript/new-component.md"
+    },
+    "docs/templates/commands/typescript/tdd-cycle.md": {
+      "checksum": "52ad44216a0d760218377c694afbde696d485b369e8a6550a193356ae5879829",
+      "source": "shared/docs/templates/commands/typescript/tdd-cycle.md"
+    },
+    "docs/templates/commands/typescript/type-safety-audit.md": {
+      "checksum": "d67779f0cc8434ed31a1bce41cabab3d8c4c23dd4470906162ea875df59826b0",
+      "source": "shared/docs/templates/commands/typescript/type-safety-audit.md"
+    },
+    "docs/templates/github-actions/basic.yml": {
+      "checksum": "81b239d1b20763466155ad3cb1138e794925ce9ac62b9ccd11500db9695d9496",
+      "source": "shared/docs/templates/github-actions/basic.yml"
+    },
+    "docs/templates/github-actions/pr-review.yml": {
+      "checksum": "a00a667fa7f5c3a42ce04824cb1c877cd2d70c2b4a70b60d4e1533a2c50c57f9",
+      "source": "shared/docs/templates/github-actions/pr-review.yml"
+    },
+    "docs/templates/hooks/README.md": {
+      "checksum": "4d632f7e146d33f8b14db94061c292b6e1f6f3aeddfa611e3a16d16f7c62c305",
+      "source": "shared/docs/templates/hooks/README.md"
+    },
+    "docs/templates/hooks/python.json": {
+      "checksum": "93ef39c3a2a6a582b643431fe1d162b26c3c4f5216d14ffe3421d7ee0a31e45a",
+      "source": "shared/docs/templates/hooks/python.json"
+    },
+    "docs/templates/hooks/quality_loop_hook.sh.template": {
+      "checksum": "83c08c3254f1d2c2d0acf5941bc0a5e28b400092c28e8f9225ac60fb1c17c007",
+      "source": "shared/docs/templates/hooks/quality_loop_hook.sh.template"
+    },
+    "docs/templates/hooks/tdd-guard.sh": {
+      "checksum": "5cd012e77d34fa1044bd8aeab4e0b2abb0ee449c74da92fcc6c58d016d13a441",
+      "source": "shared/docs/templates/hooks/tdd-guard.sh"
+    },
+    "docs/templates/hooks/typescript-quality-gate.sh": {
+      "checksum": "73413937d7c7f93b22f2400bbb0ac831da0a4e7e1427b901219416471fa4b106",
+      "source": "shared/docs/templates/hooks/typescript-quality-gate.sh"
+    },
+    "docs/templates/hooks/typescript.json": {
+      "checksum": "265b32b6f7c57a5916d08cf889aea8817c7d44ccab1129d40df8854784fd1479",
+      "source": "shared/docs/templates/hooks/typescript.json"
+    },
+    "docs/templates/investigation/COMPLETION_REPORT.md": {
+      "checksum": "001cf3337a3ed071fc53ebcc4ed5e30e14290795fde7759c27da1ea400592a78",
+      "source": "shared/docs/templates/investigation/COMPLETION_REPORT.md"
+    },
+    "docs/templates/investigation/SESSION_PLAN.md": {
+      "checksum": "005ef72f29c3dda6261c4e380ee9ffd7a273eb4fbbdd676c0604355bc9ab616d",
+      "source": "shared/docs/templates/investigation/SESSION_PLAN.md"
+    },
+    "docs/templates/mcp/chrome-devtools-mcp-setup.md": {
+      "checksum": "0ad6e568b246992bca9dde1b1078a58a48a2517d77965d4d2061e4f8faa1535e",
+      "source": "shared/docs/templates/mcp/chrome-devtools-mcp-setup.md"
+    },
+    "docs/templates/mcp/data-analysis.json": {
+      "checksum": "f8cba43062ecfac4a2a76873c5120b778094dd417ca4819375290601692d06ce",
+      "source": "shared/docs/templates/mcp/data-analysis.json"
+    },
+    "docs/templates/mcp/development.json": {
+      "checksum": "fb5963669a034e4c904de84945ec7a7698b8aeda3a63cbed8a44b403c045e16c",
+      "source": "shared/docs/templates/mcp/development.json"
+    },
+    "docs/templates/mcp/github-mcp-setup.md": {
+      "checksum": "b495c2c4e6169c02a7162f5de8a9a77b0fcac0b25aaf837f22a84342a42a4c6a",
+      "source": "shared/docs/templates/mcp/github-mcp-setup.md"
+    },
+    "docs/templates/mcp/ocr-app.json": {
+      "checksum": "be34dff22cf4b313c20369f84c256525d7b35151870c4fe4f937f0721c681664",
+      "source": "shared/docs/templates/mcp/ocr-app.json"
+    },
+    "docs/templates/mcp/playwright-mcp-setup.md": {
+      "checksum": "b55933acae47c6205ed4411c96bfa3049e857bfd4c6c0da76babe06491f48e02",
+      "source": "shared/docs/templates/mcp/playwright-mcp-setup.md"
+    },
+    "docs/templates/schemas/work-report.schema.yaml": {
+      "checksum": "f32b1153b55c29009695e960a6b202012e2da49e6e260dc89977d740be28df19",
+      "source": "shared/docs/templates/schemas/work-report.schema.yaml"
+    },
+    "docs/templates/session/SESSION_END_REPORT.md": {
+      "checksum": "f68aba1edfe1dbaab182ab8a9e1bd23ca1a0d9c62f6c74c7da896699d2c9a5f0",
+      "source": "shared/docs/templates/session/SESSION_END_REPORT.md"
+    },
+    "docs/templates/session/SESSION_START_CHECKLIST.md": {
+      "checksum": "cc33f1ecbfe45d967c71bbbf0772210c75bf371e4d69f19a06f700aca7891817",
+      "source": "shared/docs/templates/session/SESSION_START_CHECKLIST.md"
+    },
+    "docs/templates/skills/claude-design-engineer-evaluation.md": {
+      "checksum": "29f9b8f7db785addfaf1ea46a354e4cbd340a5d84d38d7c78f6ba21e0564dc10",
+      "source": "shared/docs/templates/skills/claude-design-engineer-evaluation.md"
+    },
+    "docs/templates/skills/frontend-design-skill-guide.md": {
+      "checksum": "e4398e69e81e648e7f8b655a2bd95985243ff0d08dc04d560b12f6849b6ee567",
+      "source": "shared/docs/templates/skills/frontend-design-skill-guide.md"
+    },
+    "docs/templates/specification/GWT_COMPLETION_CRITERIA.md": {
+      "checksum": "9cb0640faf371c92672c30deecf6695a873cadc70cd1f4a6528b9ac49f487539",
+      "source": "shared/docs/templates/specification/GWT_COMPLETION_CRITERIA.md"
+    },
+    "docs/templates/task/TODOWRITE_TEMPLATES.md": {
+      "checksum": "7bdbfa382dd8ce7ba602891a36510757f40bce0ee3062dbcdd867e55d3c8cb55",
+      "source": "shared/docs/templates/task/TODOWRITE_TEMPLATES.md"
+    },
+    "docs/templates/task/local-llm-task-template.json": {
+      "checksum": "7a81ae9fcbfe04315a6072317d392e58a4969745b9026c1f24237c5c14a8ea13",
+      "source": "shared/docs/templates/task/local-llm-task-template.json"
+    },
+    "docs/templates/work-orders/BACKUP_RECOMMENDATION_20260119.md": {
+      "checksum": "f98bdec62b07ceff56a497dfa2d17249c72ef099471c07b4b047a2fda71982f2",
+      "source": "shared/docs/templates/work-orders/BACKUP_RECOMMENDATION_20260119.md"
+    },
+    "docs/templates/work-orders/README.md": {
+      "checksum": "45d75674f8dc47b486943e03c700b3ffecbd1fab2096f5db24495c4a5cf1d834",
+      "source": "shared/docs/templates/work-orders/README.md"
+    },
+    "commands/code-review.md": {
+      "checksum": "634d369969242bd9e63059f23188c3ea2bad6f03185a17b3c398601a841b6294",
+      "source": "technical-projects-cli/.claude/commands/code-review.md"
+    },
+    "commands/technical-check.md": {
+      "checksum": "4a098fde14b80b134ddb733ca03e5bf979af048ecf0c0ed10156ed191058f641",
+      "source": "technical-projects-cli/.claude/commands/technical-check.md"
+    },
+    "rules/implementation.md": {
+      "checksum": "6ac575916011eac196a2f8df142abf8b131ae1eac5545922366e3d5d7a20544f",
+      "source": "technical-projects-cli/docs/rules/implementation.md"
+    },
+    "rules/task-integrity.md": {
+      "checksum": "2664ba5729cf8d66cd83e31446f3a3d3d5e1b79177dda1fae6feaa47591bb692",
+      "source": "technical-projects-cli/docs/rules/task-integrity.md"
+    },
+    "rules/test.md": {
+      "checksum": "8acc9d640b30ab3e5879e34fb37d41e6eedfc5e434b75650230e9ede5b34d1d3",
+      "source": "technical-projects-cli/docs/rules/test.md"
+    },
+    "reference/COMMUNITY_BEST_PRACTICES.md": {
+      "checksum": "b458cb3187ce10ab5735dc55e589c19b1eff5dd1e3f4cf5801e1123ace677b7e",
+      "source": "technical-projects-cli/docs/reference/COMMUNITY_BEST_PRACTICES.md"
+    },
+    "reference/FAILURE_PATTERNS.md": {
+      "checksum": "1d0766d6e9eeb5255fdc78bd619301b5a5541933173a21f482b65fa33df886df",
+      "source": "technical-projects-cli/docs/reference/FAILURE_PATTERNS.md"
+    },
+    "reference/SKILL_CATALOG.md": {
+      "checksum": "06f4aeb5a17b7d466e6372ae84332058d1515ed172df5f6e4d80d6412d14daf7",
+      "source": "technical-projects-cli/docs/reference/SKILL_CATALOG.md"
+    },
+    "skills/code-quality-enforcer/SKILL.md": {
+      "checksum": "0d83038e7e23b780d6090e5e0a4132a6bde5311ff38634be093f5b4cca4313cc",
+      "source": "technical-projects-cli/.claude/skills/code-quality-enforcer/SKILL.md"
+    },
+    "skills/deployment-verifier/SKILL.md": {
+      "checksum": "39d9c991f68e7bcd57e8a28a10f6b96473a0378ec1b80378854d52d0f1373a3d",
+      "source": "technical-projects-cli/.claude/skills/deployment-verifier/SKILL.md"
+    },
+    "skills/purpose-driven-impl/SKILL.md": {
+      "checksum": "8f3d3244946a33663b6d07d939c4f5437749e70ef2d74a2d00692d25393d3028",
+      "source": "technical-projects-cli/.claude/skills/purpose-driven-impl/SKILL.md"
+    },
+    "skills/root-cause-analyzer/SKILL.md": {
+      "checksum": "6827d2777e73e464659f557db49d1d10b36a1f1aa45c137034972d934b0ba79b",
+      "source": "technical-projects-cli/.claude/skills/root-cause-analyzer/SKILL.md"
+    },
+    "hooks/post_deploy_verification.sh": {
+      "checksum": "a0469493f88a11134ecf2930ff962b00e5a03560ffb30c6f0ac3ca2d0b3624f7",
+      "source": "technical-projects-cli/.claude/hooks/post_deploy_verification.sh"
+    },
+    "hooks/quality_check.sh": {
+      "checksum": "643aaee742bded79469f51275a96e7be9ff09110cae821edab9bd37cbc5f773b",
+      "source": "technical-projects-cli/.claude/hooks/quality_check.sh"
+    },
+    "reference/space-antenna-infrastructure-management.md": {
+      "checksum": "300fb205bacb196cbc6c162f5d707b638520cfa988c691c2979c5d1b942fd8fc",
+      "source": "technical-projects-cli/space-antenna-infrastructure-management.md"
+    },
+    "reference/technical-accuracy-guidelines.md": {
+      "checksum": "7a3de516c4520f7e9f1110639db9eb49fe896600e3aec689437e4f546e243b0d",
+      "source": "technical-projects-cli/technical-accuracy-guidelines.md"
+    },
+    "reference/test-process-requirements.md": {
+      "checksum": "04d35c8454c795cc76278406eb2c881969b954a3684f056f53965f98625bea9a",
+      "source": "technical-projects-cli/test-process-requirements.md"
+    },
+    "reference/universal-instruction-quality-rules.md": {
+      "checksum": "39d299f8f5970e12de6b2df7bac761606510f18feded75d600b742dd762c2286",
+      "source": "technical-projects-cli/universal-instruction-quality-rules.md"
+    },
+    "scripts/memory-db/compute_embeddings.py": {
+      "checksum": "ec8a67c246e883c358fdd0f4b782041577d05f6aed5687e5adb115617ff4f7ad",
+      "source": "shared/scripts/memory-db/compute_embeddings.py"
+    },
+    "scripts/memory-db/compute_embeddings_gpu.py": {
+      "checksum": "e6a927590849b4872113463409b02fd4ad5d2daec0dd5b1b1dfa55839e1e9cbc",
+      "source": "shared/scripts/memory-db/compute_embeddings_gpu.py"
+    },
+    "scripts/memory-db/export_ndjson.py": {
+      "checksum": "e07858f92365b6e12a700c5948fc41a5c22f34ab771221f199b24b7ade03bd06",
+      "source": "shared/scripts/memory-db/export_ndjson.py"
+    },
+    "scripts/memory-db/import_existing.py": {
+      "checksum": "55288edc48e04e2c63089c8217b43cf4ea74460c66f4dd13fb52fbf311fdf083",
+      "source": "shared/scripts/memory-db/import_existing.py"
+    },
+    "scripts/memory-db/init_db.py": {
+      "checksum": "a992dea6447cdb93890caefbc756719c068d8b6eee029dd17dd74d2c7f7c6e5e",
+      "source": "shared/scripts/memory-db/init_db.py"
+    },
+    "scripts/memory-db/rebuild_db.py": {
+      "checksum": "9bd994c0d4b824536849644afc299c1746a4e21f75c3590493f2d0637644117e",
+      "source": "shared/scripts/memory-db/rebuild_db.py"
+    },
+    "scripts/memory-db/requirements-memory-full.txt": {
+      "checksum": "c9350ec080e392fd4f0859925023c71ea12892133bd66efd884be04010961834",
+      "source": "shared/scripts/memory-db/requirements-memory-full.txt"
+    },
+    "scripts/memory-db/requirements-memory.txt": {
+      "checksum": "eb6f4e580d7b538f244eeaa2db70a0bf1db049555476bf7460afb9947c04ab7a",
+      "source": "shared/scripts/memory-db/requirements-memory.txt"
+    },
+    "scripts/memory-db/search.py": {
+      "checksum": "6a7019e18e22514c962872b9e0554d0d4ffc13445fe17d0c5ba2b74778fa792a",
+      "source": "shared/scripts/memory-db/search.py"
+    },
+    "scripts/memory-db/sync_to_db.py": {
+      "checksum": "1651532a240fb5c04122f74a25ef866a22387ee7ab179d6193f6a3bcc0c75fe7",
+      "source": "shared/scripts/memory-db/sync_to_db.py"
+    }
+  },
+  "managed_hook_commands": [
+    "bash .claude/hooks/block_destructive.sh",
+    "bash .claude/hooks/python_path_guard.sh",
+    "bash .claude/hooks/protect_embeddings.sh",
+    "bash .claude/hooks/check_file_size.sh",
+    "bash .claude/hooks/tdd-guard.sh",
+    "bash .claude/hooks/transcript_work_check.sh",
+    "bash .claude/hooks/check_encoding.sh",
+    "bash .claude/hooks/diagram_quality_check.sh",
+    "bash .claude/hooks/ocr_workflow_check.sh",
+    "bash .claude/hooks/memory_db_sync.sh",
+    "bash .claude/hooks/check_public_repo.sh",
+    "bash .claude/hooks/python_path_diagnose.sh",
+    "bash .claude/hooks/session_start.sh",
+    "bash .claude/hooks/memory_db_rebuild.sh",
+    "bash .claude/hooks/check_uncommitted.sh",
+    "bash .claude/hooks/memory_db_export.sh",
+    "bash .claude/hooks/auto_activate_skills.sh",
+    "bash .claude/hooks/prevent_false_completion.sh",
+    "bash .claude/hooks/plan_mode_reminder.sh",
+    "bash .claude/hooks/config_change_guard.sh"
+  ],
+  "managed_permissions": {
+    "allow": [
+      "Bash(py:*)",
+      "Bash(bash:*)",
+      "Bash(sed:*)",
+      "Bash(dos2unix:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(du:*)",
+      "Bash(git pull:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(node:*)",
+      "Bash(start:*)",
+      "Bash(explorer:*)",
+      "Skill(sync)",
+      "Skill(report)",
+      "Skill(finish)",
+      "Skill(update-docs)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(rm -r :*)",
+      "Bash(git clean -fd:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(python :*)",
+      "Bash(python -:*)",
+      "Bash(python3:*)"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+# Long-term memory DB dependencies
+# Basic: search-capable (pre-computed embedding mode)
+sqlite-vec>=0.1.6
+sqlite-utils>=3.37
+
+# BibTeX integration
+bibtexparser>=2.0.0b7
+
+# Fuzzy matching (BibTeX title dedup)
+rapidfuzz>=3.0

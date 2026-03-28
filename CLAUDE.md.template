@@ -1,0 +1,85 @@
+# CLAUDE.md - [プロジェクト名]
+
+**更新日**: [YYYY-MM-DD]
+
+---
+
+## 必読ドキュメント
+
+セッション開始時に以下を確認すること:
+
+| ドキュメント | 内容 |
+|-------------|------|
+| [PAST_INCIDENTS_AND_LESSONS.md](.claude/docs/lessons/PAST_INCIDENTS_AND_LESSONS.md) | 過去のインシデントと教訓 |
+| [TEST_PROCESS_REQUIREMENTS.md](.claude/docs/principles/TEST_PROCESS_REQUIREMENTS.md) | テストプロセス要件 |
+| [COMMUNICATION_PRINCIPLES.md](.claude/docs/principles/COMMUNICATION_PRINCIPLES.md) | コミュニケーション原則 |
+
+---
+
+## 絶対禁止事項
+
+以下のコマンドは**いかなる理由があっても実行禁止**:
+
+- `rm -rf` / `rm -r`
+- `git clean -fd` / `git clean -f`
+- `git reset --hard`
+
+その他の禁止事項:
+- WebSearch/WebFetch結果を捨てる
+- テストなしで完了宣言する
+- ファイル参照の提示（内容を直接表示すること）
+
+---
+
+## プロジェクト概要
+
+[このプロジェクトの説明]
+
+## ディレクトリ構成
+
+```
+project/
+├── src/           # ソースコード
+├── tests/         # テストコード
+└── docs/          # ドキュメント
+```
+
+## 開発コマンド
+
+```bash
+# テスト実行
+[テストコマンド]
+
+# ビルド
+[ビルドコマンド]
+```
+
+---
+
+## 自動防御システム
+
+**詳細**: [.claude/docs/DEFENSE_SYSTEM.md](.claude/docs/DEFENSE_SYSTEM.md)
+
+---
+
+## チェックリスト
+
+### 作業終了前
+- [ ] WebSearch/WebFetch実行回数 = 保存ファイル数
+- [ ] テストを実行し、全テストがパスした
+- [ ] ファイル削除を実行していない
+
+---
+
+## 学習メモ
+
+**正本**: \`work/learning-notes/LEARNING_NOTES.md\`
+**運用ルール**:
+- 新規メモはここに追記
+- 5件を超えたら古い項目をLEARNING_NOTES.mdに移動
+- 移動時に「shared/rules/に反映すべき教訓はないか」を確認
+
+### 直近の学習メモ
+
+（セッションで学んだ知見を追記）
+

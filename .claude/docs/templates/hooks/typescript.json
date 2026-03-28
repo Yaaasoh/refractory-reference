@@ -1,0 +1,20 @@
+{
+  "_metadata": {
+    "source": "session_2_4_test_verification.md 行645-663",
+    "extracted": "2025-12-31",
+    "svcp": "∃（Verification）- PostToolUseでの自動検証"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write:*.tsx|Edit:*.tsx",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write $CLAUDE_FILE_PATHS && npx eslint --fix $CLAUDE_FILE_PATHS && npx tsc --noEmit"
+          }
+        ]
+      }
+    ]
+  }
+}

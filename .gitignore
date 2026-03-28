@@ -208,3 +208,15 @@ __marimo__/
 
 # Local repository management
 temp/
+
+# Claude Code local settings (personal permissions, not for git)
+.claude/settings.local.json
+
+# Long-term memory DB (rebuilt from NDJSON)
+.claude/memory.db
+.claude/memory.db-wal
+.claude/memory.db-shm
+# Embedding cache (local only)
+.claude/memory_chunk_ids.npy
+.claude/memory_chunk_embeddings.npy
+.claude/embedding_backup/

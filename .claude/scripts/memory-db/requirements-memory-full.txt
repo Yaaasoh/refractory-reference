@@ -1,0 +1,10 @@
+# Long-term memory DB dependencies (full - for CLI with embedding)
+# Install when you need to compute embeddings locally
+-r requirements-memory.txt
+
+# Embedding model
+sentence-transformers>=3.0
+# transformers>=4.48.0 is auto-installed by sentence-transformers
+
+# NumPy (embedding operations)
+numpy>=1.24

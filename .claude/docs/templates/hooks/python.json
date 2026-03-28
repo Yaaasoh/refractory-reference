@@ -1,0 +1,20 @@
+{
+  "_metadata": {
+    "source": "session_2_4_test_verification.md 行665-683",
+    "extracted": "2025-12-31",
+    "svcp": "∃（Verification）- PostToolUseでの自動検証"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write:*.py|Edit:*.py",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "black $CLAUDE_FILE_PATHS && ruff check --fix $CLAUDE_FILE_PATHS && mypy $CLAUDE_FILE_PATHS"
+          }
+        ]
+      }
+    ]
+  }
+}
