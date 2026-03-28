@@ -1,11 +1,11 @@
 #!/bin/bash
 # セッション開始時の案内
 # SessionStart hook
-# テンプレート: deploy.shでrefractory-reference-workを置換
+# テンプレート: deploy.shでrefractory-reference-freshを置換
 
 echo ""
 echo "========================================"
-echo "   refractory-reference-work セッション開始"
+echo "   refractory-reference-fresh セッション開始"
 echo "========================================"
 echo ""
 echo "【重要】このリポジトリでは破壊的コマンドが禁止されています。"
