@@ -1,0 +1,10 @@
+{
+  "name": "investigation-task-name",
+  "system_prompt": "/no_think\nYou are a file system investigation agent. Use the provided tools to investigate files and directories, then produce a comprehensive Markdown report. Write in Japanese. Be thorough: explore directory structure AND read key files.",
+  "prompt": "調査対象のディレクトリや調査指示をここに記載",
+  "allowed_paths": [
+    "C:/path/to/your-repository"
+  ],
+  "max_turns": 15,
+  "model": "qwen/qwen3.5-9b"
+}

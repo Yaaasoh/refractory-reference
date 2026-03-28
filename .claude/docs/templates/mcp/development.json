@@ -1,0 +1,20 @@
+{
+  "_metadata": {
+    "source": "session_2_5_mcp_integration.md 行559-577",
+    "extracted": "2025-12-31",
+    "svcp": "外部ツール連携 - 開発環境向け"
+  },
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${HOME}/projects"]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+#!/bin/bash
+# ${HOOK_NAME} - ${DESCRIPTION} (Quality Loops対応)
+#
+# 用途: PostToolUse (Write|Edit) で実行
+# 効果: ${CHECK_TYPE} + additionalContext修正指示注入
+# 動作: stderr=人間向け警告、stdout=エージェント向けadditionalContext JSON
+#
+# 設定例 (.claude/settings.json):
+# {
+#   "hooks": {
+#     "PostToolUse": [{
+#       "matcher": "Write|Edit",
+#       "hooks": [{"type": "command", "command": "bash .claude/hooks/${HOOK_NAME}.sh", "timeout": ${TIMEOUT:-5}}]
+#     }]
+#   }
+# }
+
+set -euo pipefail
+
+INPUT=$(cat)
+FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // empty')
+
+# ファイルパスが空の場合はスルー
+if [ -z "$FILE_PATH" ]; then
+  exit 0
+fi
+
+# 拡張子フィルタ（対象ファイルのみ処理）
+case "$FILE_PATH" in
+  ${TARGET_PATTERN}) ;;
+  *) exit 0 ;;
+esac
+
+# ファイルが存在しない場合はスルー
+if [ ! -f "$FILE_PATH" ]; then
+  exit 0
+fi
+
+WARNINGS=0
+FIX_INSTRUCTIONS=""
+
+# =============================================================================
+# チェックロジック（ここにチェック処理を追加）
+# =============================================================================
+
+# 例: パターン検出
+# if some_condition; then
+#   echo "⚠️ 問題: 説明" >&2
+#   FIX_INSTRUCTIONS="${FIX_INSTRUCTIONS}修正指示。 "
+#   WARNINGS=$((WARNINGS + 1))
+# fi
+
+# =============================================================================
+# additionalContext出力（警告がある場合のみ）
+# =============================================================================
+
+if [ "$WARNINGS" -gt 0 ]; then
+  echo "" >&2
+  echo "📋 ${HOOK_DISPLAY_NAME}: ${WARNINGS}件の警告（${FILE_PATH}）" >&2
+
+  # additionalContext注入: エージェントのコンテキストに修正指示を注入
+  # jqでJSON安全にエスケープし、stdout(fd1)に出力
+  CONTEXT_TEXT="[${HOOK_TAG}] ${FILE_PATH} に${WARNINGS}件の問題: ${FIX_INSTRUCTIONS}"
+  ESCAPED=$(printf '%s' "$CONTEXT_TEXT" | jq -Rs '.')
+  echo "{\"hookSpecificOutput\":{\"additionalContext\":${ESCAPED}}}" >&1
+fi
+
+# 常にexit 0（警告のみ、ブロックしない）
+# ブロックする場合は exit 2 または {"decision":"block"} JSON を使用
+exit 0

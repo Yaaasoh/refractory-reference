@@ -1,0 +1,78 @@
+# work-report.schema.yaml — 作業報告書スキーマ
+#
+# 用途: /report コマンドで生成される作業報告書の構造定義
+# 検証: shared/scripts/validate-document.sh で使用
+# 配置: shared/docs/templates/schemas/
+#
+# 注意: 即時の強制適用ではなく、まず「定義が存在する」状態。
+#       実運用フィードバック後に /report コマンドへの組み込みを検討。
+
+metadata:
+  format_name: "作業報告書"
+  version: "1.0.0"
+  source_document: null    # 原本なし（自己生成文書）
+  source_verified: true    # 原本確認不要のためtrue
+
+sections:
+  - id: title
+    title: "作業報告書"
+    level: 1
+    required: true
+    order: 1
+
+  - id: overview
+    title: "概要"
+    level: 2
+    required: true
+    order: 2
+    constraints:
+      min_chars: 50
+      max_chars: 500
+
+  - id: work_performed
+    title: "実施内容"
+    level: 2
+    required: true
+    order: 3
+    constraints:
+      min_items: 1
+
+  - id: deliverables
+    title: "成果物"
+    level: 2
+    required: true
+    order: 4
+
+  - id: commits
+    title: "コミット"
+    level: 2
+    required: false
+    order: 5
+
+  - id: design_decisions
+    title: "設計判断"
+    level: 2
+    required: false
+    order: 6
+
+  - id: issues
+    title: "課題・残作業"
+    level: 2
+    required: false
+    order: 7
+
+  - id: next_steps
+    title: "次のステップ"
+    level: 2
+    required: false
+    order: 8
+
+  - id: references
+    title: "参照"
+    level: 2
+    required: false
+    order: 9
+
+prohibited_sections:
+  - "TL;DR"       # 省略禁止（全文書化が原則）
+  - "Draft"       # 未完成報告禁止

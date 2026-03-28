@@ -1,0 +1,25 @@
+# GitHub Actions - 自動PRレビュー
+#
+# 出典: session_2_6_github_actions.md 行516-538
+# 抽出日: 2025-12-31
+# SVCP観点: CI/CDでの∃自動化 - PRレビュー
+
+name: Auto Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review this PR for security, performance, and code quality.
+            Provide actionable feedback.
+          max_turns: 5

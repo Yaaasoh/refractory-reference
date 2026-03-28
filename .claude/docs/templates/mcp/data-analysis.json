@@ -1,0 +1,16 @@
+{
+  "_metadata": {
+    "source": "session_2_5_mcp_integration.md 行579-593",
+    "extracted": "2025-12-31",
+    "svcp": "外部ツール連携 - データ分析環境向け"
+  },
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      }
+    }
+  }
+}
