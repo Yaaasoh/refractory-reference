@@ -66,6 +66,12 @@
             "command": "echo '{\"decision\":\"block\",\"reason\":\"deploy.sh -f はユーザーの明示的指示がある場合のみ使用可能です。-fなしで実行してください。\"}'",
             "timeout": 5,
             "if": "Bash(*/deploy.sh*-f*)|Bash(*/deploy.sh*--force*)"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/preflight_citation_gate.sh",
+            "timeout": 10,
+            "if": "Bash(quarto render*)|Bash(quarto preview*)"
           }
         ]
       },
@@ -138,6 +144,11 @@
             "type": "command",
             "command": "bash .claude/hooks/shellcheck_quality_loop.sh",
             "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/check_citation_placement.sh",
+            "timeout": 5
           }
         ]
       },
@@ -198,14 +209,14 @@
             "timeout": 30
           },
           {
-            "type": "prompt",
-            "prompt": "あなたはClaude Code応答の品質検査官です。入力JSONを評価してください。\n\n【即allow条件】\n- \"stop_hook_active\"がtrue → allow（無限ループ防止）\n- \"last_assistant_message\"が空・未存在・100文字未満 → allow\n\n【deny条件】以下に該当する場合のみdeny:\n- コードやドキュメントを確認せずに推測を事実として断定している（例: 関数の戻り値型、API仕様、設定値を検証なしに断言）\n- 「おそらく」「推測ですが」等の不確実性マーカーなしに検証していない情報を述べている\n\n【allow条件】以下は必ずallow:\n- 提案・推奨・質問への回答\n- 「確認しました」「読みました」「Readツールで確認」等の証拠参照がある記述\n- 一般的技術知識（言語仕様、フレームワーク基本動作）\n- ツール実行結果の報告\n\ndeny時は該当箇所を引用してください。\n\n$ARGUMENTS",
-            "timeout": 15
-          },
-          {
             "type": "command",
             "command": "bash .claude/hooks/check_websearch_saved.sh",
             "timeout": 30
+          },
+          {
+            "type": "prompt",
+            "prompt": "あなたはClaude Code応答の品質検査官です。入力JSONを評価してください。\n\n【即allow条件】\n- \"stop_hook_active\"がtrue → allow（無限ループ防止）\n- \"last_assistant_message\"が空・未存在・100文字未満 → allow\n\n【deny条件】以下に該当する場合のみdeny:\n- コードやドキュメントを確認せずに推測を事実として断定している（例: 関数の戻り値型、API仕様、設定値を検証なしに断言）\n- 「おそらく」「推測ですが」等の不確実性マーカーなしに検証していない情報を述べている\n\n【allow条件】以下は必ずallow:\n- 提案・推奨・質問への回答\n- 「確認しました」「読みました」「Readツールで確認」等の証拠参照がある記述\n- 一般的技術知識（言語仕様、フレームワーク基本動作）\n- ツール実行結果の報告\n\ndeny時は該当箇所を引用してください。\n\n$ARGUMENTS",
+            "timeout": 15
           }
         ]
       }

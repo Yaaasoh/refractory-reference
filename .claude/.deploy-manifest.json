@@ -1,8 +1,8 @@
 {
   "_comment": "prompt-patterns deploy.sh が管理。手動編集禁止",
-  "deployed_at": "2026-04-01T02:12:04Z",
+  "deployed_at": "2026-04-01T07:57:57Z",
   "package": "technical",
-  "source_commit": "287e610",
+  "source_commit": "52ed23f",
   "files": {
     "hooks/README.md": {
       "checksum": "e4e1415c02e61e47f5b9c97100e18b54a31cad018fdcc5e1af7f96bba96dfd9e",
@@ -221,8 +221,8 @@
       "source": "shared/skills/react-best-practices/SKILL.md"
     },
     "skills/verification-enforcer/SKILL.md": {
-      "checksum": "4f1066624f1acaac0386a9d65f1e2f2ae1b9c795642217f128d51f7633c1ed62",
-      "source": "shared/skills/verification-enforcer/SKILL.md"
+      "checksum": "3d8f5504918d60bec9325ab0e8b2221b977175deda808c5ae4341975de13db47",
+      "source": "technical-projects-cli/.claude/skills/verification-enforcer/SKILL.md"
     },
     "agents/code-reviewer.md": {
       "checksum": "706fa6629c57a47375519d4b937443ccd10ddff2089f9a5a2e4febd29b1eed52",
@@ -639,6 +639,18 @@
     "rules/hook-if-condition-policy.md": {
       "checksum": "1c04c2b764c05b0fba9f351883bcb5fa0d84fd6c692e2b12e9aa49e9e29314a8",
       "source": "shared/rules/hook-if-condition-policy.md"
+    },
+    "hooks/check_citation_placement.sh": {
+      "checksum": "288ac753029a01d325b59364705a8a3514a17adb655416b1eba1b1a9a2da6188",
+      "source": "shared/hooks/check_citation_placement.sh"
+    },
+    "hooks/preflight_citation_gate.sh": {
+      "checksum": "5efd6a2c7effef958db98350aa2fe9732fd6cc55e3f3028be293f81f56aea351",
+      "source": "shared/hooks/preflight_citation_gate.sh"
+    },
+    "rules/distribution-policy.md": {
+      "checksum": "aaec41da828ae1f0c078de3060972cf742f1c719a4fdfdc76343151b7422c66f",
+      "source": "shared/rules/distribution-policy.md"
     }
   },
   "managed_hook_commands": [
@@ -647,6 +659,7 @@
     "bash .claude/hooks/protect_embeddings.sh",
     "bash .claude/hooks/check_fork_push.sh",
     "echo '{\"decision\":\"block\",\"reason\":\"deploy.sh -f はユーザーの明示的指示がある場合のみ使用可能です。-fなしで実行してください。\"}'",
+    "bash .claude/hooks/preflight_citation_gate.sh",
     "bash .claude/hooks/check_file_size.sh",
     "bash .claude/hooks/tdd-guard.sh",
     "bash .claude/hooks/transcript_work_check.sh",
@@ -657,6 +670,7 @@
     "bash .claude/hooks/ocr_workflow_check.sh",
     "bash .claude/hooks/shellcheck_quality_loop.sh",
     "bash .claude/hooks/memory_db_sync.sh",
+    "bash .claude/hooks/check_citation_placement.sh",
     "bash .claude/hooks/check_deploy_notices.sh",
     "bash .claude/hooks/check_public_repo.sh",
     "bash .claude/hooks/python_path_diagnose.sh",
