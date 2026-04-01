@@ -1207,7 +1207,7 @@
 4. auto memoryに権限境界の絶対原則を記録済み
 
 **参照ドキュメント**:
-- `incidents/incidents/INC-015-repeated-permission-boundary-violation-20260220.md`
+- `incidents/INC-015-repeated-permission-boundary-violation-20260220.md`
 - `incidents/lessons-learned.md` 6.13節
 - CLAUDE.md 学習メモ 2026-02-20
 

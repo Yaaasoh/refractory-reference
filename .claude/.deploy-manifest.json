@@ -1,8 +1,8 @@
 {
   "_comment": "prompt-patterns deploy.sh が管理。手動編集禁止",
-  "deployed_at": "2026-03-27T23:01:46Z",
+  "deployed_at": "2026-04-01T02:12:44Z",
   "package": "technical",
-  "source_commit": "2abbf34",
+  "source_commit": "287e610",
   "files": {
     "hooks/README.md": {
       "checksum": "e4e1415c02e61e47f5b9c97100e18b54a31cad018fdcc5e1af7f96bba96dfd9e",
@@ -13,7 +13,7 @@
       "source": "shared/hooks/auto_activate_skills.sh"
     },
     "hooks/block_destructive.sh": {
-      "checksum": "20dbeffc59c687317904deb8a39c99ea486f2edd557d698956d426a5ba9272fd",
+      "checksum": "2aee3d4346e0096d836903125a7a538a5cc57f8a86f0c02e135caa1a33e3dd9b",
       "source": "shared/hooks/block_destructive.sh"
     },
     "hooks/check_encoding.sh": {
@@ -93,7 +93,7 @@
       "source": "shared/commands/checkpoint.md"
     },
     "commands/finish.md": {
-      "checksum": "ced1cf272bee40ce9f0e01210c1c3dabe26bf84de4226004580f960fe8758bba",
+      "checksum": "ae5a468494f9425a6d0d7cb2d7f06f6d71a063e443ddcbb55366e0e8b10918c9",
       "source": "shared/commands/finish.md"
     },
     "commands/investigate.md": {
@@ -221,8 +221,8 @@
       "source": "shared/skills/react-best-practices/SKILL.md"
     },
     "skills/verification-enforcer/SKILL.md": {
-      "checksum": "3d8f5504918d60bec9325ab0e8b2221b977175deda808c5ae4341975de13db47",
-      "source": "technical-projects-cli/.claude/skills/verification-enforcer/SKILL.md"
+      "checksum": "4f1066624f1acaac0386a9d65f1e2f2ae1b9c795642217f128d51f7633c1ed62",
+      "source": "shared/skills/verification-enforcer/SKILL.md"
     },
     "agents/code-reviewer.md": {
       "checksum": "706fa6629c57a47375519d4b937443ccd10ddff2089f9a5a2e4febd29b1eed52",
@@ -265,11 +265,11 @@
       "source": "shared/agents/web-researcher.md"
     },
     "rules/anti-tampering-rules.md": {
-      "checksum": "d94ba31365cb4031e26805eb5b54b9c777d9bdc40fae5ec82e8353c97eb2b9d6",
+      "checksum": "a89dfc41b7797c6462e47eb225483b3d6c3b283882bc92a57cb10b821d575887",
       "source": "shared/rules/anti-tampering-rules.md"
     },
     "rules/deployment.md": {
-      "checksum": "cfe042bffb7742741c555922f578c1693b735dd742be405435881ae2c3034dbb",
+      "checksum": "eaf5aec34019d39a2533578c1e5acf13d55ebefd5550702c5a7d4526da842839",
       "source": "shared/rules/deployment.md"
     },
     "rules/diagram-generation.md": {
@@ -277,23 +277,23 @@
       "source": "shared/rules/diagram-generation.md"
     },
     "rules/document-quality.md": {
-      "checksum": "806c794e6e558bc987f26a715ef1d75bcfab673bab9aa0f3ed2263bf4da8fbad",
+      "checksum": "75161a4fa5a34146cd168e3638fef5a9dbf3be8467a1182bf8911428e7eee4f9",
       "source": "shared/rules/document-quality.md"
     },
     "rules/evidence-based-thinking.md": {
-      "checksum": "7a6bbca78fb7ef499e6f2793be325490a74b8b183924b34e279cff3726fb4de7",
+      "checksum": "e16816d48dada2cef7175f45d1a94590c1f7e05a3086c5f7788c5fd8f9b08e8e",
       "source": "shared/rules/evidence-based-thinking.md"
     },
     "rules/hook-response-protocol.md": {
-      "checksum": "b8d0d6c60e4921711b13818f84f3e158c6d1aebc6946791c985b78ff825f017f",
+      "checksum": "3577e90757bb90f45e70901c98c0917c448b23e0b8b75f8d64c430acc69fec4c",
       "source": "shared/rules/hook-response-protocol.md"
     },
     "rules/plan-mode.md": {
-      "checksum": "6cea05f63dd9bcee80b4c2df9b6fe658a0822055702f6794722d9e6afcf1bc49",
+      "checksum": "90145d6f9e1ab489af36af033e902fb4acc0c1f4baf9c1b162c87b41259afdc0",
       "source": "shared/rules/plan-mode.md"
     },
     "rules/transcript-work.md": {
-      "checksum": "6d76ee91c016f550f48e872fda3077905bb1868aeae1c1bd7be129cb9014d097",
+      "checksum": "97d915ee7a667536e0a64bee5f17e79474a642f4c7c9bc86422bb35bceb018c8",
       "source": "shared/rules/transcript-work.md"
     },
     "docs/DEPLOYMENT_GUIDE.md": {
@@ -329,7 +329,7 @@
       "source": "shared/docs/guides/typescript-implementation-guide.md"
     },
     "docs/lessons/ATONEMENT_SYSTEM.md": {
-      "checksum": "76ece627ad1e7c600c86f5b887fc60ebf0be19ba3959d339e8015c89f2d7a436",
+      "checksum": "2444e7cb13775d9b488cc86717ebd5f334a7f8bb4617003da156c02d6d49d5ef",
       "source": "shared/docs/lessons/ATONEMENT_SYSTEM.md"
     },
     "docs/principles/COMMUNICATION_PRINCIPLES.md": {
@@ -611,25 +611,61 @@
     "scripts/memory-db/sync_to_db.py": {
       "checksum": "1651532a240fb5c04122f74a25ef866a22387ee7ab179d6193f6a3bcc0c75fe7",
       "source": "shared/scripts/memory-db/sync_to_db.py"
+    },
+    "hooks/check_deploy_notices.sh": {
+      "checksum": "ac94cc32e3d34b7627ba5d77efa434206c39cf50102dce516d212405fdec101c",
+      "source": "shared/hooks/check_deploy_notices.sh"
+    },
+    "hooks/check_fork_push.sh": {
+      "checksum": "60758c019e2863d114b450e8cceb82600ef3c16b2a02f676bc3a2d16ce083046",
+      "source": "shared/hooks/check_fork_push.sh"
+    },
+    "hooks/check_websearch_saved.sh": {
+      "checksum": "1a1f00c7d352c7a4c13519a2f1c83da672ae10d8440abcb8e01cffe5e2a62f10",
+      "source": "shared/hooks/check_websearch_saved.sh"
+    },
+    "hooks/protect_packages.sh": {
+      "checksum": "1677794987c8a50761d99cab3c980f33fb64996ef0301feb4ab7a74d552f8961",
+      "source": "shared/hooks/protect_packages.sh"
+    },
+    "hooks/warn_work_dir.sh": {
+      "checksum": "9c17b27f148ea5c1d81b62aeb9a8c0c3b1e5454e101527e4dd6428718d26138d",
+      "source": "shared/hooks/warn_work_dir.sh"
+    },
+    "commands/survey-repo.md": {
+      "checksum": "057c36252962905fcdac929c36c18b742b730ee7ed563b2a96d3e52fd4680987",
+      "source": "shared/commands/survey-repo.md"
+    },
+    "rules/hook-if-condition-policy.md": {
+      "checksum": "1c04c2b764c05b0fba9f351883bcb5fa0d84fd6c692e2b12e9aa49e9e29314a8",
+      "source": "shared/rules/hook-if-condition-policy.md"
     }
   },
   "managed_hook_commands": [
     "bash .claude/hooks/block_destructive.sh",
     "bash .claude/hooks/python_path_guard.sh",
     "bash .claude/hooks/protect_embeddings.sh",
+    "bash .claude/hooks/check_fork_push.sh",
+    "echo '{\"decision\":\"block\",\"reason\":\"deploy.sh -f はユーザーの明示的指示がある場合のみ使用可能です。-fなしで実行してください。\"}'",
     "bash .claude/hooks/check_file_size.sh",
     "bash .claude/hooks/tdd-guard.sh",
     "bash .claude/hooks/transcript_work_check.sh",
+    "bash .claude/hooks/protect_packages.sh",
+    "bash .claude/hooks/warn_work_dir.sh",
     "bash .claude/hooks/check_encoding.sh",
     "bash .claude/hooks/diagram_quality_check.sh",
     "bash .claude/hooks/ocr_workflow_check.sh",
+    "bash .claude/hooks/shellcheck_quality_loop.sh",
     "bash .claude/hooks/memory_db_sync.sh",
+    "bash .claude/hooks/check_deploy_notices.sh",
     "bash .claude/hooks/check_public_repo.sh",
     "bash .claude/hooks/python_path_diagnose.sh",
     "bash .claude/hooks/session_start.sh",
     "bash .claude/hooks/memory_db_rebuild.sh",
     "bash .claude/hooks/check_uncommitted.sh",
     "bash .claude/hooks/memory_db_export.sh",
+    null,
+    "bash .claude/hooks/check_websearch_saved.sh",
     "bash .claude/hooks/auto_activate_skills.sh",
     "bash .claude/hooks/prevent_false_completion.sh",
     "bash .claude/hooks/plan_mode_reminder.sh",
