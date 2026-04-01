@@ -1,6 +1,6 @@
 {
   "_comment": "prompt-patterns deploy.sh が管理。手動編集禁止",
-  "deployed_at": "2026-04-01T02:12:44Z",
+  "deployed_at": "2026-04-01T02:12:04Z",
   "package": "technical",
   "source_commit": "287e610",
   "files": {
