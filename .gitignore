@@ -220,3 +220,6 @@ temp/
 .claude/memory_chunk_ids.npy
 .claude/memory_chunk_embeddings.npy
 .claude/embedding_backup/
+
+# Deployment notices read tracking (session-local)
+.claude/.notices-read

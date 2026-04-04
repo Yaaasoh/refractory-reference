@@ -1,8 +1,8 @@
 {
   "_comment": "prompt-patterns deploy.sh が管理。手動編集禁止",
-  "deployed_at": "2026-04-01T07:57:57Z",
+  "deployed_at": "2026-04-04T02:50:33Z",
   "package": "technical",
-  "source_commit": "52ed23f",
+  "source_commit": "34db142",
   "files": {
     "hooks/README.md": {
       "checksum": "e4e1415c02e61e47f5b9c97100e18b54a31cad018fdcc5e1af7f96bba96dfd9e",
@@ -221,8 +221,8 @@
       "source": "shared/skills/react-best-practices/SKILL.md"
     },
     "skills/verification-enforcer/SKILL.md": {
-      "checksum": "3d8f5504918d60bec9325ab0e8b2221b977175deda808c5ae4341975de13db47",
-      "source": "technical-projects-cli/.claude/skills/verification-enforcer/SKILL.md"
+      "checksum": "4f1066624f1acaac0386a9d65f1e2f2ae1b9c795642217f128d51f7633c1ed62",
+      "source": "shared/skills/verification-enforcer/SKILL.md"
     },
     "agents/code-reviewer.md": {
       "checksum": "706fa6629c57a47375519d4b937443ccd10ddff2089f9a5a2e4febd29b1eed52",
@@ -641,7 +641,7 @@
       "source": "shared/rules/hook-if-condition-policy.md"
     },
     "hooks/check_citation_placement.sh": {
-      "checksum": "288ac753029a01d325b59364705a8a3514a17adb655416b1eba1b1a9a2da6188",
+      "checksum": "e3d7e38ad9e4d5594a879f7662ffa08e168fdf18042da51c576c85891719e634",
       "source": "shared/hooks/check_citation_placement.sh"
     },
     "hooks/preflight_citation_gate.sh": {
@@ -651,6 +651,30 @@
     "rules/distribution-policy.md": {
       "checksum": "aaec41da828ae1f0c078de3060972cf742f1c719a4fdfdc76343151b7422c66f",
       "source": "shared/rules/distribution-policy.md"
+    },
+    "hooks/bibtex_check.sh": {
+      "checksum": "a78bcddb5f2540e1eb45bd61a8f0ad18c17e407aeccc93009a0a020fab511e44",
+      "source": "shared/hooks/bibtex_check.sh"
+    },
+    "rules/citation-management.md": {
+      "checksum": "c1d1b02b572078afc5f6accb6c5384bebf3da23189f7ace46228f8222bef4d02",
+      "source": "shared/rules/citation-management.md"
+    },
+    "docs/templates/bibliography/README.md": {
+      "checksum": "16903e48a4daa6562d0442e6c8c8142962b81c78322a8409bed5540956494515",
+      "source": "shared/docs/templates/bibliography/README.md"
+    },
+    "docs/templates/bibliography/bibliography.bib.template": {
+      "checksum": "076c4e973640c8de47baccd39d1253a2a0507264a764e72a416cee7715c63f5c",
+      "source": "shared/docs/templates/bibliography/bibliography.bib.template"
+    },
+    "docs/templates/citation/check_bibtex_keys.sh": {
+      "checksum": "ceed2445be4e629a228e5ba83e448f4fa71e646cc2de86131d335bd79a13a582",
+      "source": "shared/docs/templates/citation/check_bibtex_keys.sh"
+    },
+    "docs/templates/citation/count_citations.sh": {
+      "checksum": "5d4d2311127a01bed46620f89736b727bcf2522b73b660492d732e3f12366be3",
+      "source": "shared/docs/templates/citation/count_citations.sh"
     }
   },
   "managed_hook_commands": [
@@ -671,6 +695,7 @@
     "bash .claude/hooks/shellcheck_quality_loop.sh",
     "bash .claude/hooks/memory_db_sync.sh",
     "bash .claude/hooks/check_citation_placement.sh",
+    "bash .claude/hooks/bibtex_check.sh",
     "bash .claude/hooks/check_deploy_notices.sh",
     "bash .claude/hooks/check_public_repo.sh",
     "bash .claude/hooks/python_path_diagnose.sh",
